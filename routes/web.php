@@ -27,7 +27,10 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [IndexController::class, 'index'])->name('web.index');
 Route::get('/about-us', [IndexController::class, 'about_us'])->name('aboutus');
+
 Route::get('/contact-us', [IndexController::class, 'contact_us'])->name('contactus');
+Route::post('send-message', [IndexController::class, 'send_message'])->name('send.message');
+
 Route::get('/cart', [IndexController::class, 'cart'])->name('cart');
 Route::get('/products', [IndexController::class, 'product'])->name('product');
 

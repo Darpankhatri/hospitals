@@ -83,7 +83,7 @@
                 <div class="contact-form">
                     <h3>Send message</h3>
 
-                    <form id="contactForm">
+                    <form id="contactForm" action="{{ route('send.message') }}" method="post" >
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
@@ -106,7 +106,7 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
                                     <label>PHONE</label>
-                                    <input type="text" name="phone_number" id="phone_number" required
+                                    <input type="text" name="phone" id="phone_number" required
                                         data-error="Please enter your number" class="form-control"
                                         placeholder="***********">
                                     <div class="help-block with-errors"></div>
@@ -116,7 +116,7 @@
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
                                     <label>SUBJECT</label>
-                                    <input type="text" name="msg_subject" id="msg_subject" class="form-control" required
+                                    <input type="text" name="subject" id="msg_subject" class="form-control" required
                                         data-error="Please enter your subject" placeholder="write subject here...">
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -131,22 +131,6 @@
                                 </div>
                             </div>
 
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <div class="form-group">
-                                        <div class="form-check">
-                                            <input name="gridCheck" value="I agree to the terms and privacy policy."
-                                                class="form-check-input" type="checkbox" id="gridCheck" required>
-
-                                            <label class="form-check-label" for="gridCheck">
-                                                Accept <a href="terms-conditions.php">terms and conditions</a> and <a
-                                                    href="privacy-policy.php">privacy policy.</a>
-                                            </label>
-                                            <div class="help-block with-errors gridCheck-error"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                             <div class="col-lg-12 col-md-12 text-center">
                                 <button type="submit" class="default-btn active">
@@ -156,6 +140,7 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
+                        <button type="submit" class="btn btn-primary"></button>
                     </form>
                 </div>
             </div>

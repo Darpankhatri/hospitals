@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\product;
+use App\Models\message;
 
 class IndexController extends Controller
 {
@@ -33,5 +34,23 @@ class IndexController extends Controller
     {
         $product = product::where('is_active',1)->where('is_deleted',0)->paginate(8);
         return view('web.pages.product',compact('product'))->with('title','Products');
+    }
+
+    public function send_message(Request $req)
+    {
+
+        $message = new message;
+
+        $message->name = $req->name;
+        $message->email = $req->email;
+        $message->phone = $req->phone;
+        $message->subject = $req->subject;
+        $message->message = $req->message;
+
+        
+
+        $message->save();
+
+        return back()->with('message','Message Send Successfully');
     }
 }
