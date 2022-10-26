@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2022 at 08:36 AM
+-- Generation Time: Oct 26, 2022 at 01:13 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dashboard_darpan`
+-- Database: `hospital`
 --
 
 -- --------------------------------------------------------
@@ -43,9 +43,9 @@ CREATE TABLE `config` (
 --
 
 INSERT INTO `config` (`id`, `name`, `slug`, `value`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
-(1, 'Contact Number', 'contactnumber', '(123) 45678 123', 1, 0, '2022-10-12 14:45:03', '2022-10-22 08:43:26'),
-(2, 'Web Email', 'webemail', 'abc@gmail.com', 1, 0, '2022-10-12 14:45:03', '2022-10-22 08:43:26'),
-(3, 'Address', 'address', 'abcd street 1', 1, 0, '2022-10-12 14:45:03', '2022-10-22 08:43:26');
+(1, 'Contact Number', 'contactnumber', '1-885-665-2022', 1, 0, '2022-10-12 14:45:03', '2022-10-23 07:51:40'),
+(2, 'Web Email', 'webemail', 'medicoz@health.com', 1, 0, '2022-10-12 14:45:03', '2022-10-23 07:51:40'),
+(3, 'Address', 'address', '177 Devon Lane Miami, MK 3355', 1, 0, '2022-10-12 14:45:03', '2022-10-23 07:51:40');
 
 -- --------------------------------------------------------
 
@@ -85,8 +85,10 @@ CREATE TABLE `logo` (
 
 INSERT INTO `logo` (`id`, `name`, `image`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
 (1, 'logo', 'uploads/logos/image_2022-10-14_154641111_1665744403.png', 0, 0, '2022-10-14 05:46:43', '2022-10-16 13:53:43'),
-(2, 'favicon', 'uploads/logos/favicon_1665745146.ico', 1, 0, '2022-10-14 05:59:06', '2022-10-14 05:59:06'),
-(3, 'logo', 'uploads/logos/image_2022-10-16_235341045_1665946423.png', 1, 0, '2022-10-16 13:53:43', '2022-10-16 13:53:43');
+(2, 'favicon', 'uploads/logos/favicon_1665745146.ico', 0, 0, '2022-10-14 05:59:06', '2022-10-23 07:49:51'),
+(3, 'logo', 'uploads/logos/image_2022-10-16_235341045_1665946423.png', 0, 0, '2022-10-16 13:53:43', '2022-10-23 07:48:46'),
+(4, 'logo', 'uploads/logos/image_2022-10-23_174844858_1666529326.png', 1, 0, '2022-10-23 07:48:46', '2022-10-23 07:48:46'),
+(5, 'favicon', 'uploads/logos/favicon_1666529391.png', 1, 0, '2022-10-23 07:49:51', '2022-10-23 07:49:51');
 
 -- --------------------------------------------------------
 
@@ -147,8 +149,14 @@ INSERT INTO `product` (`id`, `name`, `image`, `price`, `stock`, `is_active`, `is
 (1, 'Angel ear droper', 'uploads/product/image_2022-10-23_105112996_1666504296.png', 65, 12, 1, 0, '2022-10-22 09:42:56', '2022-10-23 00:51:36'),
 (2, 'Long rectangel', 'uploads/product/image_2022-10-23_105217334_1666504355.png', 70, 22, 1, 0, '2022-10-22 09:42:56', '2022-10-23 00:52:35'),
 (3, 'Violet glass gel', 'uploads/product/image_2022-10-23_105408604_1666504450.png', 78, 90, 1, 0, '2022-10-22 13:13:18', '2022-10-23 00:54:10'),
-(4, 'Violet', 'uploads/product/image_2022-10-23_105504040_1666504506.png', 126, 30, 1, 0, '2022-10-22 14:22:59', '2022-10-23 00:55:06'),
-(5, 'Skin care cream', 'uploads/product/image_2022-10-23_105719302_1666504659.png', 50, 26, 1, 0, '2022-10-23 00:57:39', '2022-10-23 00:57:39');
+(4, 'Violet', 'uploads/product/image_2022-10-23_105504040_1666504506.png', 126, 30, 1, 0, '2022-10-22 14:22:59', '2022-10-23 13:02:36'),
+(5, 'Skin care cream', 'uploads/product/image_2022-10-23_105719302_1666504659.png', 50, 26, 1, 0, '2022-10-23 00:57:39', '2022-10-23 13:02:31'),
+(6, 'Hazi multi vitamin', 'uploads/product/product-7_1666679121.jpg', 56, 41, 1, 0, '2022-10-25 01:25:21', '2022-10-25 01:25:21'),
+(7, 'Ampoule', 'uploads/product/product-8_1666679154.jpg', 40, 15, 1, 0, '2022-10-25 01:25:54', '2022-10-25 01:25:54'),
+(8, 'Healthy vitamin', 'uploads/product/product-9_1666679194.jpg', 58, 31, 1, 0, '2022-10-25 01:26:34', '2022-10-25 01:26:34'),
+(9, 'Special bacuum tube', 'uploads/product/product-10_1666679235.jpg', 43, 14, 1, 0, '2022-10-25 01:27:15', '2022-10-25 01:27:15'),
+(10, 'Deodo lequide', 'uploads/product/product-11_1666679276.jpg', 61, 13, 1, 0, '2022-10-25 01:27:56', '2022-10-25 01:27:56'),
+(11, 'MK nose droper', 'uploads/product/product-12_1666679342.jpg', 39, 30, 1, 0, '2022-10-25 01:29:02', '2022-10-25 01:29:02');
 
 -- --------------------------------------------------------
 
@@ -247,7 +255,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `logo`
 --
 ALTER TABLE `logo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -259,7 +267,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
