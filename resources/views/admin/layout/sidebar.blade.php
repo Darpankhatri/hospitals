@@ -24,6 +24,18 @@
                             <span> Product </span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('attribute','message') }}">
+                            <i class="fe-message-square"></i>
+                            <span> Message </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('attribute','subscribe') }}">
+                            <i class="fe-message-square"></i>
+                            <span> Subscribe </span>
+                        </a>
+                    </li>
                 @endif
 
                 {{-- <li>

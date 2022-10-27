@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            @if ($slug != 'message' || $slug != '')
+            @if ($slug != 'message' && $slug != '' && $slug != 'subscribe')
                 <div class="row">
                     <div class="col-md-6 col-xl-3">
                         <div class="widget-rounded-circle card bg-dark shadow-none data-model-btn" style="cursor: pointer">
@@ -179,6 +179,38 @@
                     }
                 }
             });
-        })
+        });
+
+        $(document).on("click", ".toggle-checkbox", function() {
+            var id = $(this).data("id");
+            var table = $(this).data("table");
+            var status = $(this).prop('checked') == true ? 1 : 0;
+
+            var ele = $(this);
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                url: "{{ route('status.record') }}",
+                data: {
+                    id: id,
+                    table: table,
+                    is_active: status,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    toastr.options = {
+                        "closeButton": true,
+                        "progressBar": true,
+                        "debug": false,
+                        "positionClass": "toast-bottom-right",
+                    }
+                    if (response.status == 0) {
+                        toastr.error(response.message);
+                    } else {
+                        toastr.success(response.message);
+                    }
+                }
+            });
+        });
     </script>
 @endsection

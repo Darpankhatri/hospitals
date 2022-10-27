@@ -55,6 +55,7 @@ Route::group(['middleware' => 'IsAdmin'], function()
 
     Route::get('/attribute/{slug?}',[GenericController::class, 'attribute'])->name('attribute');
     Route::post('/delete-record',[GenericController::class, 'delete_record'])->name('delete.record');
+    Route::post('/status-record',[GenericController::class, 'status_record'])->name('status.record');
     Route::post('/add-record/{slug?}',[GenericController::class, 'add_record'])->name('add.record');
 
 

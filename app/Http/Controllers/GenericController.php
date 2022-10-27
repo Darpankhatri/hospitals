@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\product;
 use App\Models\message;
+use App\Models\subscribe;
 use Exception;
 use Illuminate\Support\Facades\Hash;
 
@@ -187,6 +188,62 @@ class GenericController extends Controller
             $data['script'] = $script;
 
             return $data;
+        } else if($slug == 'subscribe'){
+            $table = 'App\Models\\' . $slug;
+            $data = $table::where('is_deleted',0)->get();
+            $body .= '
+                <table id="basic-datatable" class="table table-striped dt-responsive nowrap w-100">
+                    <thead>
+                        <tr>
+                            <th>No#</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Creation date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>';
+                    if(!$data->isEmpty()){
+                        foreach($data as $key => $val){
+                            
+                            $body .= '<tr>
+                                    <td>'.++$key.'</td>
+                                    <td>'.$val->email.'</td>
+                                    <td>
+                                        <label class="toggle">
+                                            <input data-id="'.$val->id.'" data-table="'.$table.'" class="toggle-checkbox active"
+                                                type="checkbox"';
+                                        if($val->is_active == 1){
+                                            $body .= ' checked';
+                                        }        
+                                    $body .= '><div class="toggle-switch"></div>
+                                        </label>
+                                    </td>
+                                    <td>'.date("M d,Y", strtotime($val->created_at)).'</td>
+                                </tr>';
+                        }
+                    }
+
+                    $body .='</tbody>
+                    <tfoot>
+                        <tr>
+                            <th>No#</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Creation date</th>
+                        </tr>
+                    </tfoot>
+                </table>';
+
+            $script = '';
+
+            $data['body'] = $body;
+            $data['script'] = $script;
+
+            return $data;
+        } else{
+            $data['body'] = '';
+            $data['script'] = '';
         }
 
         return $body;
@@ -226,7 +283,7 @@ class GenericController extends Controller
 
     public function delete_record(Request $req)
     {
-        $token_ignore = ['_token' => '' , 'table' => ''];
+        $token_ignore = ['_token' => '' , 'table' => '' , 'id' => ''];
         $post_feilds = array_diff_key($_POST,$token_ignore);
         $post_feilds['is_active'] = 0;
         $post_feilds['is_deleted'] = 1;
@@ -238,6 +295,20 @@ class GenericController extends Controller
             return response()->json(['error'=>$e->getMessage(), 'status'=> 0]);
         }
 
+    }
+
+    public function status_record(Request $req)
+    {
+        // dd($req);
+        $token_ignore = ['_token' => '' , 'table' => '' , 'id' => ''];
+        $post_feilds = array_diff_key($_POST,$token_ignore);
+
+        try{
+            $data = $req->table::where('id',$req->id)->update($post_feilds);
+            return response()->json(['message'=>'Status Updated!', 'status'=> 1]);
+        }catch(Exception $e){
+            return response()->json(['error'=>$e->getMessage(), 'status'=> 0]);
+        }
     }
 
 
