@@ -549,58 +549,6 @@
         </div>
         <!-- End Choose Us Area -->
 
-        <!-- Start Our Team Area -->
-        <div class="our-team-area bg-color-f1f5f8 pt-100 pb-70">
-            <div class="container">
-                <div class="section-title team-title">
-                    <span class="top-title">OUR SPECIALISTS</span>
-                    <h2>We have all the professional specialists in our hospital</h2>
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-team">
-                            <img src="{{ asset('web/images/team/team-1.jpg') }}" alt="Image">
-                            <h3>
-                                <a href="find-a-doctor.php">Glenn Arredondo</a>
-                            </h3>
-                            <span>Family Physicians</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-team">
-                            <img src="{{ asset('web/images/team/team-2.jpg') }}" alt="Image">
-                            <h3>
-                                <a href="find-a-doctor.php">Dorthy Winters</a>
-                            </h3>
-                            <span>Gastroenterologists</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-team">
-                            <img src="{{ asset('web/images/team/team-3.jpg') }}" alt="Image">
-                            <h3>
-                                <a href="find-a-doctor.php">Christopher Perreault</a>
-                            </h3>
-                            <span>Medicine Specialists</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-team">
-                            <img src="{{ asset('web/images/team/team-4.jpg') }}" alt="Image">
-                            <h3>
-                                <a href="find-a-doctor.php">Linda Flores</a>
-                            </h3>
-                            <span>Gynecologists</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Our Team Area -->
 
         <!-- Start Urgent Area -->
         <div class="urgent-area ptb-100">
