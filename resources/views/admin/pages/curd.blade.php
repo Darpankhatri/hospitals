@@ -19,25 +19,28 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-xl-3">
-                    <div class="widget-rounded-circle card bg-dark shadow-none data-model-btn" style="cursor: pointer">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-6">
-                                    <h2 class="text-white mt-2">Add {{ Str::title($slug) }}</h2>
-                                    {{-- <p class="text-white mb-0 text-truncate">{{ Auth::user()->name }}</p> --}}
-                                </div>
-                                <div class="col-6">
-                                    <div class="avatar-lg rounded-circle bg-soft-light ms-auto">
-                                        <i class="fe-layers font-24 avatar-title text-white"></i>
+            @if ($slug != 'message' || $slug != '')
+                <div class="row">
+                    <div class="col-md-6 col-xl-3">
+                        <div class="widget-rounded-circle card bg-dark shadow-none data-model-btn" style="cursor: pointer">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h2 class="text-white mt-2">Add {{ Str::title($slug) }}</h2>
+                                        {{-- <p class="text-white mb-0 text-truncate">{{ Auth::user()->name }}</p> --}}
                                     </div>
-                                </div>
-                            </div> <!-- end row-->
-                        </div>
-                    </div> <!-- end widget-rounded-circle-->
-                </div> <!-- end col-->
-            </div>
+                                    <div class="col-6">
+                                        <div class="avatar-lg rounded-circle bg-soft-light ms-auto">
+                                            <i class="fe-layers font-24 avatar-title text-white"></i>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+                            </div>
+                        </div> <!-- end widget-rounded-circle-->
+                    </div> <!-- end col-->
+                </div>
+            @endif
+
         </div>
 
         {{-- <table id="basic-datatable" class="table activate-select dt-responsive nowrap w-100"> --}}
@@ -47,8 +50,10 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title">{{ Str::title($slug) }} Record<hr></h4>
-                            {!! $table['body'] !!}
+                        <h4 class="header-title">{{ Str::title($slug) }} Record
+                            <hr>
+                        </h4>
+                        {!! $table['body'] !!}
 
                     </div> <!-- end card body-->
                 </div> <!-- end card -->
@@ -56,7 +61,7 @@
         </div>
 
 
-        
+
 
     </div>
 
@@ -72,13 +77,12 @@
                 </div>
                 <div class="modal-body">
                     {!! $form !!}
-                    
+
                 </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary waves-effect"
-                            data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-info waves-effect waves-light add-data">Create</button>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-info waves-effect waves-light add-data">Create</button>
+                </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
@@ -88,10 +92,9 @@
 @section('css')
     {{-- data table --}}
     <!-- third party css -->
-    <link href="{{ asset('admin/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet"
+        type="text/css" />
     <!-- third party css end -->
-
-
 @endsection
 
 @section('js')
@@ -100,7 +103,7 @@
     <script src="{{ asset('admin/assets/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('admin/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
     <script src="{{ asset('admin/assets/libs/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js') }}"></script>
-    
+
     <!-- third party js ends -->
 
     <!-- Datatables init -->
@@ -123,7 +126,7 @@
                 $('#edit_id').val('');
                 $("#image").prop("required", true);
                 $("#data-modal").modal("show");
-                
+
             });
 
         });

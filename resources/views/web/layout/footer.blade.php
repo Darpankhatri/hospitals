@@ -111,15 +111,15 @@
                 <div class="single-footer-widget">
                     <h3>Subscribe Our Newsletter</h3>
 
-                    <form class="newsletter-form" data-toggle="validator">
-                        <input type="email" class="form-control" placeholder="Email address" name="EMAIL" required
-                            autocomplete="off">
+                    <form class="iiiii" action="{{ route('subscribe') }}" method="POST">
+                        @csrf
+                        <input type="email" class="form-control" placeholder="Email address" name="email" required
+                            autocomplete="off"/>
 
                         <button class="default-btn" type="submit">
                             Submit now
                         </button>
 
-                        <div id="validator-newsletter" class="form-result"></div>
                     </form>
 
                     <ul class="socila-link">

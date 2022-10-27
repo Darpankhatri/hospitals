@@ -30,6 +30,7 @@ Route::get('/about-us', [IndexController::class, 'about_us'])->name('aboutus');
 
 Route::get('/contact-us', [IndexController::class, 'contact_us'])->name('contactus');
 Route::post('send-message', [IndexController::class, 'send_message'])->name('send.message');
+Route::post('subscribe', [IndexController::class, 'subscribe'])->name('subscribe');
 
 Route::get('/cart', [IndexController::class, 'cart'])->name('cart');
 Route::get('/products', [IndexController::class, 'product'])->name('product');

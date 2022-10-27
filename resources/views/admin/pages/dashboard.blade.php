@@ -13,8 +13,7 @@
                         <h4 class="page-title">Dashboard</h4>
                         <div>
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Codefox</a></li>
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('web.index') }}">Medicoz</a></li>
                                 <li class="breadcrumb-item active">Dashboard</li>
                             </ol>
                         </div>
@@ -23,7 +22,7 @@
             </div>
             <!-- end page title -->
 
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-6 col-xl-3">
                     <div class="widget-rounded-circle card bg-purple shadow-none">
                         <div class="card-body">
@@ -680,7 +679,7 @@
                 </div>
                 
             </div>
-            <!-- end row -->
+            <!-- end row --> --}}
 
         </div> <!-- container -->
 

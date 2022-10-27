@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\message;
+use App\Models\subscribe;
 
 class IndexController extends Controller
 {
@@ -52,5 +53,23 @@ class IndexController extends Controller
         $message->save();
 
         return back()->with('message','Message Send Successfully');
+    }
+
+    public function subscribe(Request $req)
+    {
+        // if($req->email){
+        //     $sub = new subscribe;
+        //     $sub->email = $req->email;
+        //     $sub->save();
+
+        //     return back()->with('message','Subscribed');
+        // }
+        return back()->with('error','Enter Email First!');
+    }
+
+    // api
+    public function page()
+    {
+        return response()->json(["hello"=>"hi"]);
     }
 }

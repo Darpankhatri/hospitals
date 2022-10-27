@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\product;
+use App\Models\message;
 use Exception;
 use Illuminate\Support\Facades\Hash;
 
@@ -128,6 +129,59 @@ class GenericController extends Controller
                         $("#data-modal").modal("show");
                         
                     });';
+
+            $data['body'] = $body;
+            $data['script'] = $script;
+
+            return $data;
+        } else if($slug == 'message'){
+            $table = 'App\Models\\' . $slug;
+            $data = $table::where('is_active',1)->where('is_deleted',0)->get();
+            $body .= '
+                <table id="basic-datatable" class="table table-striped dt-responsive nowrap w-100">
+                    <thead>
+                        <tr>
+                            <th>No#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>subject</th>
+                            <th>Message</th>
+                            <th>Creation date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>';
+                    if(!$data->isEmpty()){
+                        foreach($data as $key => $val){
+                            
+                            $body .= '<tr>
+                                    <td>'.++$key.'</td>
+                                    <td>'.$val->name.'</td>
+                                    <td>'.$val->email.'</td>
+                                    <td>$'.$val->phone.'</td>
+                                    <td>$'.$val->subject.'</td>
+                                    <td>$'.$val->message.'</td>
+                                    <td>'.date("M d,Y", strtotime($val->created_at)).'</td>
+                                </tr>';
+                        }
+                    }
+
+                    $body .='</tbody>
+                    <tfoot>
+                        <tr>
+                            <th>No#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>subject</th>
+                            <th>Message</th>
+                            <th>Creation date</th>
+                        </tr>
+                    </tfoot>
+                </table>';
+
+            $script = '';
 
             $data['body'] = $body;
             $data['script'] = $script;

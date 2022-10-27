@@ -34,18 +34,18 @@
                             <div class="row align-items-end">
                                 <div class="col-lg-7 col-md-6">
                                     <div class="who-we-are-img">
-                                        <img src="assets/images/about/about-1.jpg" alt="image">
+                                        <img src="{{ asset('web/images/about/about-1.jpg') }}" alt="image">
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-6">
                                     <div class="who-we-are-img-2">
                                         <h3>Connect With <span>Bexi</span> Health Care</h3>
-                                        <img src="assets/images/about/about-2.jpg" alt="image">
+                                        <img src="{{ asset('web/images/about/about-2.jpg') }}" alt="image">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="who-we-are-img-3">
-                                        <img src="assets/images/about/about-3.jpg" alt="image">
+                                        <img src="{{ asset('web/images/about/about-3.jpg') }}" alt="image">
                                     </div>
                                 </div>
                             </div>
@@ -220,10 +220,10 @@
 
                     <div class="col-lg-6">
                         <div class="choose-us-img ml-86">
-                            <img src="assets/images/choose-us-img.jpg" alt="Image">
+                            <img src="{{ asset('web/images/choose-us-img.jpg') }}" alt="Image">
 
                             <div class="ambulance-services d-flex">
-                                <img src="assets/images/icon/icon-2.svg" alt="Image">
+                                <img src="{{ asset('web/images/icon/icon-2.svg') }}" alt="Image">
                                 <div class="ambulance-info">
                                     <span>24/7 Hours Service</span>
                                     <a href="tel:1-885-665-2022">1-885-665-2022</a>
@@ -236,199 +236,6 @@
         </div>
         <!-- End Choose Us Area -->
 
-        <!-- Start Our Team Area -->
-        <div class="our-team-area bg-color-f1f5f8 pt-100 pb-70">
-            <div class="container">
-                <div class="section-title team-title">
-                    <span class="top-title">OUR SPECIALISTS</span>
-                    <h2>We have all the professional specialists in our hospital</h2>
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-team">
-                            <img src="assets/images/team/team-1.jpg" alt="Image">
-                            <h3>
-                                <a href="find-a-doctor.php">Glenn Arredondo</a>
-                            </h3>
-                            <span>Family Physicians</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-team">
-                            <img src="assets/images/team/team-2.jpg" alt="Image">
-                            <h3>
-                                <a href="find-a-doctor.php">Dorthy Winters</a>
-                            </h3>
-                            <span>Family Physicians</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-team">
-                            <img src="assets/images/team/team-3.jpg" alt="Image">
-                            <h3>
-                                <a href="find-a-doctor.php">Christopher Perreault</a>
-                            </h3>
-                            <span>Gastroenterologists</span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-team">
-                            <img src="assets/images/team/team-4.jpg" alt="Image">
-                            <h3>
-                                <a href="find-a-doctor.php">Linda Flores</a>
-                            </h3>
-                            <span>Gynecologists</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Our Team Area -->
-
-        <!-- Start Client Area -->
-        <div class="client-area bg-4">
-            <div class="ml100">
-                <div class="client-bg pt-100 pb-70">
-                    <div class="container">
-                        <div class="section-title left-title">
-                            <span class="top-title">OUR CLIENTS</span>
-                            <h2>Our happy clients say about us</h2>
-                        </div>
-
-                        <div class="single-client client-slide owl-carousel owl-theme">
-                            <div class="client-item">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div class="client-info d-flex align-items-center">
-                                        <img src="assets/images/client/client-1.jpg" alt="Image">
-                                        <div class="ms-3">
-                                            <h3>Ralph Gonzales</h3>
-                                            <span>Patient</span>
-                                        </div>
-                                    </div>
-                                    <img src="assets/images/client/quat.svg" class="quat" alt="Image">
-                                </div>
-
-                                <p>“Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                                    Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur
-                                    aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum
-                                    sed sit amet dui. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum diam
-                                    amet quam vehicula elementum sed sit amet dui.”</p>
-                            </div>
-
-                            <div class="client-item">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div class="client-info d-flex align-items-center">
-                                        <img src="assets/images/client/client-1.jpg" alt="Image">
-                                        <div class="ms-3">
-                                            <h3>Ralph Gonzales</h3>
-                                            <span>Patient</span>
-                                        </div>
-                                    </div>
-                                    <img src="assets/images/client/quat.svg" class="quat" alt="Image">
-                                </div>
-
-                                <p>“Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-                                    Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur
-                                    aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum
-                                    sed sit amet dui. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum diam
-                                    amet quam vehicula elementum sed sit amet dui.”</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Client Area -->
-
-        <!-- Start Urgent Area -->
-        <div class="urgent-area ptb-100">
-            <div class="container">
-                <div class="section-title services-title">
-                    <span class="top-title">URGENT SERVICES</span>
-                    <h2>See our hospital's emergency care services</h2>
-                </div>
-
-                <div class="urgent-slide owl-carousel owl-theme">
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-3.svg" alt="Image">
-                        </div>
-                        <h3>Chest Pain</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-2.svg" alt="Image">
-                        </div>
-                        <h3>Minor Injury</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-3.svg" alt="Image">
-                        </div>
-                        <h3>Vaccinations</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-4.svg" alt="Image">
-                        </div>
-                        <h3>Minor Burns</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-3.svg" alt="Image">
-                        </div>
-                        <h3>Chest Pain</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-2.svg" alt="Image">
-                        </div>
-                        <h3>Minor Injury</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-3.svg" alt="Image">
-                        </div>
-                        <h3>Vaccinations</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-4.svg" alt="Image">
-                        </div>
-                        <h3>Minor Burns</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-3.svg" alt="Image">
-                        </div>
-                        <h3>Chest Pain</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-2.svg" alt="Image">
-                        </div>
-                        <h3>Minor Injury</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-3.svg" alt="Image">
-                        </div>
-                        <h3>Vaccinations</h3>
-                    </div>
-                    <div class="single-urgent">
-                        <div class="icon">
-                            <img src="assets/images/icon/icon-4.svg" alt="Image">
-                        </div>
-                        <h3>Minor Burns</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Urgent Area -->
 
     </main>
 @endsection

@@ -83,7 +83,8 @@
                 <div class="contact-form">
                     <h3>Send message</h3>
 
-                    <form id="contactForm" action="{{ route('send.message') }}" method="post" >
+                    <form id="iiiii" action="{{ route('send.message') }}" method="post" >
+                        @csrf
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
@@ -140,7 +141,6 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary"></button>
                     </form>
                 </div>
             </div>
