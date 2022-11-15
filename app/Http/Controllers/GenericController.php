@@ -96,7 +96,7 @@ class GenericController extends Controller
                                     <td>'.$val->name.'</td>
                                     <td><img style="width:80px;height:80px;" src="'.asset($val->image).'"></td>
                                     <td>$'.$val->price.'</td>
-                                    <td>$'.$val->stock.'</td>
+                                    <td>'.$val->stock.'</td>
                                     <td>'.date("M d,Y", strtotime($val->created_at)).'</td>
                                     <td>
                                         <button type="button" class="btn btn-primary editor-form fa fa-edit" data-id="'.$val->id.'" data-name='.$val->name.' data-price='.$val->price.' data-stock='.$val->stock.'></button>
