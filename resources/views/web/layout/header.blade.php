@@ -73,7 +73,7 @@
         <div class="container">
             <div class="mobile-responsive-menu">
                 <div class="logo">
-                    <a href="index.php">
+                    <a href="{{ route('web.index') }}">
                         <img src="{{ asset($logo->image) }}" class="main-logo" alt="logo">
                         <img src="{{ asset('web/images/white-logo.png') }}" class="white-logo" alt="logo">
                     </a>
@@ -85,7 +85,7 @@
     <div class="desktop-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="{{ route('web.index') }}">
                     <img src="{{ asset($logo->image) }}" class="main-logo" alt="logo">
                     <img src="{{ asset('web/images/white-logo.png') }}" class="white-logo" alt="logo">
                 </a>
@@ -93,7 +93,7 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
-                            <a href="index.php" class="nav-link border-style active">Home</a>
+                            <a href="{{ route('web.index') }}" class="nav-link border-style active">Home</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('aboutus') }}" class="nav-link border-style">About Us</a>
