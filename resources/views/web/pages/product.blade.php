@@ -69,7 +69,7 @@
                                     </ul>
 
                                     <h3>
-                                        <a href="product-details.php">{{ $data->name }}</a>
+                                        <a href="{{ route('product.detail',$data->id) }}">{{ $data->name }}</a>
                                     </h3>
 
                                     {{-- <span><del>$99.00</del> - $55.00</span> --}}
@@ -121,20 +121,6 @@
                         {{-- {!! $product->links() !!} --}}
                         {!! $product->links('pagination::bootstrap-4') !!}
                     </div>
-                    {{-- <div class="col-lg-12">
-                        <div class="pagination-area">
-                            <a href="products.php" class="next page-numbers">
-                                <i class="ri-arrow-left-line"></i>
-                            </a>
-                            <span class="page-numbers current" aria-current="page">1</span>
-                            <a href="products.php" class="page-numbers">2</a>
-                            <a href="products.php" class="page-numbers">3</a>
-
-                            <a href="products.php" class="next page-numbers">
-                                <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>

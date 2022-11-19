@@ -4,7 +4,7 @@
 <div class="footer-area bg-color-f1f5f8 pt-100 pb-70">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-6 col-sm-6">
                 <div class="single-footer-widget">
                     <a href="index.php" class="logo">
                         <img src="{{ asset($logo->image) }}" class="main-logo" alt="logo">
@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-sm-6">
+            {{-- <div class="col-lg-3 col-sm-6">
                 <div class="single-footer-widget">
                     <h3>Departments</h3>
 
@@ -105,9 +105,9 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-6 col-sm-6">
                 <div class="single-footer-widget">
                     <h3>Subscribe Our Newsletter</h3>
 

@@ -26,7 +26,7 @@
 
 
         <!-- Start Contact Informetion Area -->
-        <div class="contact-informetion-area ptb-100">
+        {{-- <div class="contact-informetion-area ptb-100">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- End Contact Informetion Area -->
 
         <!-- Start Contact Area -->

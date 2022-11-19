@@ -26,15 +26,17 @@ class IndexController extends Controller
         return view('web.pages.contact-us')->with('title','Contact Us');
     }
 
-    public function cart()
-    {
-        return view('web.pages.cart')->with('title','cart');
-    }
 
     public function product()
     {
         $product = product::where('is_active',1)->where('is_deleted',0)->paginate(8);
         return view('web.pages.product',compact('product'))->with('title','Products');
+    }
+
+    public function product_detail($id)
+    {
+        $product = product::where('id',$id)->where('is_active',1)->where('is_deleted',0)->first();
+        return view('web.pages.product-detail',compact('product'))->with('title','Product Detail');
     }
 
     public function send_message(Request $req)
@@ -57,19 +59,23 @@ class IndexController extends Controller
 
     public function subscribe(Request $req)
     {
-        // if($req->email){
-        //     $sub = new subscribe;
-        //     $sub->email = $req->email;
-        //     $sub->save();
+        // return $req;
+        $data = subscribe::where('email',$req->email)->first();
+        // return $data;
+        if(!$data){
+            $sub = new subscribe;
+            $sub->email = $req->email;
+            $sub->save();
 
-        //     return back()->with('message','Subscribed');
-        // }
+            return back()->with('message','Subscribed');
+        }
         return back()->with('error','Enter Email First!');
     }
 
     // api
     public function page()
     {
-        return response()->json(["hello"=>"hi"]);
+        $product = product::where('is_active',1)->where('is_deleted',0)->first();
+        return response()->json(["product"=>$product]);
     }
 }

@@ -60,6 +60,13 @@ class GenericController extends Controller
                                     <input type="number" class="form-control" id="stock" name="stock" placeholder="stock" required>
                                 </div>
                             </div>
+
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="field-2" class="form-label">Description</label>
+                                    <textarea class="form-control" id="description" name="description" row="6" required></textarea>
+                                </div>
+                            </div>
                         </div>
                     </form>';
         }
@@ -99,7 +106,7 @@ class GenericController extends Controller
                                     <td>'.$val->stock.'</td>
                                     <td>'.date("M d,Y", strtotime($val->created_at)).'</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary editor-form fa fa-edit" data-id="'.$val->id.'" data-name='.$val->name.' data-price='.$val->price.' data-stock='.$val->stock.'></button>
+                                        <button type="button" class="btn btn-primary editor-form fa fa-edit" data-id="'.$val->id.'" data-name="'.$val->name.'" data-price='.$val->price.' data-stock='.$val->stock.' data-description="'.$val->description.'"></button>
                                         <button type="button" class="btn btn-danger delete-record fa fa-trash" data-id='.$val->id.' data-table='.$table.'></button>
                                     </td>
                                 </tr>';
@@ -125,6 +132,7 @@ class GenericController extends Controller
                         $("#name").val($(this).data("name"));
                         $("#price").val($(this).data("price"));
                         $("#stock").val($(this).data("stock"));
+                        $("#description").text($(this).data("description"));
                         $("#image").removeAttr("required");
                         $(".add-data").text("Update");
                         $("#data-modal").modal("show");
@@ -160,9 +168,9 @@ class GenericController extends Controller
                                     <td>'.++$key.'</td>
                                     <td>'.$val->name.'</td>
                                     <td>'.$val->email.'</td>
-                                    <td>$'.$val->phone.'</td>
-                                    <td>$'.$val->subject.'</td>
-                                    <td>$'.$val->message.'</td>
+                                    <td>'.$val->phone.'</td>
+                                    <td>'.$val->subject.'</td>
+                                    <td>'.$val->message.'</td>
                                     <td>'.date("M d,Y", strtotime($val->created_at)).'</td>
                                 </tr>';
                         }

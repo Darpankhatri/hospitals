@@ -32,8 +32,8 @@ Route::get('/contact-us', [IndexController::class, 'contact_us'])->name('contact
 Route::post('send-message', [IndexController::class, 'send_message'])->name('send.message');
 Route::post('subscribe', [IndexController::class, 'subscribe'])->name('subscribe');
 
-Route::get('/cart', [IndexController::class, 'cart'])->name('cart');
 Route::get('/products', [IndexController::class, 'product'])->name('product');
+Route::get('/product-detail/{id}', [IndexController::class, 'product_detail'])->name('product.detail');
 
 
 
@@ -41,6 +41,8 @@ Route::group(['middleware' => 'auth'], function()
 {
     
     Route::get('checkout', [CartController::class, 'checkout'])->name('checkout');
+    
+    Route::get('/cart', [CartController::class, 'cart'])->name('cart');
 });
 
 
