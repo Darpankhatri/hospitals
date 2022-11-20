@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2022 at 01:13 PM
+-- Generation Time: Nov 20, 2022 at 10:44 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `hospital`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `is_active` tinyint(4) NOT NULL DEFAULT 1,
+  `is_deleted` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -93,6 +110,33 @@ INSERT INTO `logo` (`id`, `name`, `image`, `is_active`, `is_deleted`, `created_a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `id` int(11) NOT NULL,
+  `name` varchar(512) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `phone` varchar(40) NOT NULL,
+  `is_active` tinyint(4) NOT NULL DEFAULT 1,
+  `is_deleted` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `subject` varchar(512) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `name`, `email`, `phone`, `is_active`, `is_deleted`, `created_at`, `updated_at`, `subject`, `message`) VALUES
+(1, 'Colby Buckner', 'xoqudur@mailinator.com', '+1 (315) 998-6646', 1, 0, '2022-11-18 14:08:37', '2022-11-18 14:08:37', 'Velit dicta quia qui', 'Voluptatibus lorem N'),
+(2, 'Conan Espinoza', 'xyguniso@mailinator.com', '+1 (777) 489-9831', 1, 0, '2022-11-19 05:37:43', '2022-11-19 05:37:43', 'Non corporis sit ma', 'Id in aliquam beatae');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -135,6 +179,7 @@ CREATE TABLE `product` (
   `image` varchar(200) NOT NULL,
   `price` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
+  `description` text NOT NULL,
   `is_active` tinyint(4) NOT NULL DEFAULT 1,
   `is_deleted` tinyint(4) NOT NULL DEFAULT 0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -145,18 +190,41 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `image`, `price`, `stock`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
-(1, 'Angel ear droper', 'uploads/product/image_2022-10-23_105112996_1666504296.png', 65, 12, 1, 0, '2022-10-22 09:42:56', '2022-10-23 00:51:36'),
-(2, 'Long rectangel', 'uploads/product/image_2022-10-23_105217334_1666504355.png', 70, 22, 1, 0, '2022-10-22 09:42:56', '2022-10-23 00:52:35'),
-(3, 'Violet glass gel', 'uploads/product/image_2022-10-23_105408604_1666504450.png', 78, 90, 1, 0, '2022-10-22 13:13:18', '2022-10-23 00:54:10'),
-(4, 'Violet', 'uploads/product/image_2022-10-23_105504040_1666504506.png', 126, 30, 1, 0, '2022-10-22 14:22:59', '2022-10-23 13:02:36'),
-(5, 'Skin care cream', 'uploads/product/image_2022-10-23_105719302_1666504659.png', 50, 26, 1, 0, '2022-10-23 00:57:39', '2022-10-23 13:02:31'),
-(6, 'Hazi multi vitamin', 'uploads/product/product-7_1666679121.jpg', 56, 41, 1, 0, '2022-10-25 01:25:21', '2022-10-25 01:25:21'),
-(7, 'Ampoule', 'uploads/product/product-8_1666679154.jpg', 40, 15, 1, 0, '2022-10-25 01:25:54', '2022-10-25 01:25:54'),
-(8, 'Healthy vitamin', 'uploads/product/product-9_1666679194.jpg', 58, 31, 1, 0, '2022-10-25 01:26:34', '2022-10-25 01:26:34'),
-(9, 'Special bacuum tube', 'uploads/product/product-10_1666679235.jpg', 43, 14, 1, 0, '2022-10-25 01:27:15', '2022-10-25 01:27:15'),
-(10, 'Deodo lequide', 'uploads/product/product-11_1666679276.jpg', 61, 13, 1, 0, '2022-10-25 01:27:56', '2022-10-25 01:27:56'),
-(11, 'MK nose droper', 'uploads/product/product-12_1666679342.jpg', 39, 30, 1, 0, '2022-10-25 01:29:02', '2022-10-25 01:29:02');
+INSERT INTO `product` (`id`, `name`, `image`, `price`, `stock`, `description`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
+(1, 'Angel ear droper', 'uploads/product/image_2022-10-23_105112996_1666504296.png', 65, 12, 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.', 1, 0, '2022-10-22 09:42:56', '2022-11-19 02:50:21'),
+(2, 'Long rectangel', 'uploads/product/image_2022-10-23_105217334_1666504355.png', 70, 22, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero blanditiis quo fugiat magni accusamus exercitationem! Voluptate, deleniti quae. Libero iusto minus, nulla excepturi quidem reprehenderit blanditiis eligendi exercitationem nesciunt ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi temporibus deserunt mollitia natus esse, sunt fuga quos. Autem quasi error quisquam architecto fuga suscipit atque voluptatibus nobis impedit nulla. Officia ercitationem. Lorem ipsum dolor, sit amet consectetur adipisicing elit.', 1, 0, '2022-10-22 09:42:56', '2022-11-19 02:50:44'),
+(3, 'Medical vial', 'uploads/product/image_2022-10-23_105408604_1666504450.png', 78, 90, ' Officia quaerat maxime laudantium obcaecati qui? Magni officiis fugit, dolorem mollitia eius similique accusantium nostrum possimus consectetur laudantium distinctio aliquid delectus assumenda? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime earum deleniti, quaerat rerum corporis quis iste veritatis', 1, 0, '2022-10-22 13:13:18', '2022-11-19 02:51:02'),
+(4, 'Violet', 'uploads/product/image_2022-10-23_105504040_1666504506.png', 126, 30, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam, distinctio atque aperiam obcaecati ipsam id, inventore consectetur laudantium repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit.', 1, 0, '2022-10-22 14:22:59', '2022-11-19 02:48:33'),
+(5, 'Skin care cream', 'uploads/product/image_2022-10-23_105719302_1666504659.png', 50, 26, 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.', 1, 0, '2022-10-23 00:57:39', '2022-11-19 02:48:57'),
+(6, 'Hazi multi vitamin', 'uploads/product/product-7_1666679121.jpg', 56, 41, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero blanditiis quo fugiat magni accusamus exercitationem! Voluptate, deleniti quae. Libero iusto minus, nulla excepturi quidem reprehenderit blanditiis eligendi exercitationem nesciunt ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi temporibus deserunt mollitia natus esse, sunt fuga quos. ', 1, 0, '2022-10-25 01:25:21', '2022-11-19 02:49:29'),
+(7, 'Ampoule', 'uploads/product/product-8_1666679154.jpg', 40, 20, ' Officia quaerat maxime laudantium obcaecati qui? Magni officiis fugit, dolorem mollitia eius similique accusantium nostrum possimus consectetur laudantium distinctio aliquid delectus assumenda? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime earum deleniti, quaerat rerum corporis quis iste veritatis', 1, 0, '2022-10-25 01:25:54', '2022-11-19 02:51:29'),
+(8, 'Healthy vitamin', 'uploads/product/product-9_1666679194.jpg', 58, 31, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero blanditiis quo fugiat magni accusamus exercitationem! Voluptate, deleniti quae. Libero iusto minus, nulla excepturi quidem reprehenderit blanditiis eligendi exercitationem nesciunt ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi temporibus deserunt mollitia natus esse, sunt fuga quos. ', 1, 0, '2022-10-25 01:26:34', '2022-11-19 02:51:53'),
+(9, 'Special bacuum tube', 'uploads/product/product-10_1666679235.jpg', 43, 14, 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.', 1, 0, '2022-10-25 01:27:15', '2022-11-19 02:52:13'),
+(10, 'Deodo lequide', 'uploads/product/product-11_1666679276.jpg', 61, 13, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam, distinctio atque aperiam obcaecati ipsam id, inventore consectetur laudantium repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. ', 1, 0, '2022-10-25 01:27:56', '2022-11-19 02:53:03'),
+(11, 'MK nose droper', 'uploads/product/product-12_1666679342.jpg', 39, 30, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam, distinctio atque aperiam obcaecati ipsam id, inventore consectetur laudantium repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. ', 1, 0, '2022-10-25 01:29:02', '2022-11-19 02:52:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscribe`
+--
+
+CREATE TABLE `subscribe` (
+  `id` int(11) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `is_active` tinyint(4) NOT NULL DEFAULT 1,
+  `is_deleted` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `subscribe`
+--
+
+INSERT INTO `subscribe` (`id`, `email`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
+(1, 'new@gmail.com', 1, 0, '2022-11-18 14:07:34', '2022-11-18 14:07:34'),
+(2, 'ziqejej@mailinator.com', 1, 0, '2022-11-18 14:08:16', '2022-11-18 14:09:56');
 
 -- --------------------------------------------------------
 
@@ -192,6 +260,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `image`, `gender`, `address`, `dob`,
 --
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `config`
 --
 ALTER TABLE `config`
@@ -208,6 +282,12 @@ ALTER TABLE `failed_jobs`
 -- Indexes for table `logo`
 --
 ALTER TABLE `logo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -229,6 +309,12 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `subscribe`
+--
+ALTER TABLE `subscribe`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -238,6 +324,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `config`
@@ -258,6 +350,12 @@ ALTER TABLE `logo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -268,6 +366,12 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `subscribe`
+--
+ALTER TABLE `subscribe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
