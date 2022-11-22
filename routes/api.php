@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
+
 Route::get('page', [IndexController::class, 'page'])->name('page');
+Route::get('auth', [ApiController::class, 'auth_token'])->name('auth.token');
+
+Route::post('subscribe', [ApiController::class, 'subscribe'])->name('subscribe');
+Route::post('message', [ApiController::class, 'message'])->name('message');
+
+
+
+Route::group(['middleware' => 'auth:api'], function () {
+    
+});
