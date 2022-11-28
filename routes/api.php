@@ -22,11 +22,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-Route::get('page', [IndexController::class, 'page'])->name('page');
-Route::get('auth', [ApiController::class, 'auth_token'])->name('auth.token');
+Route::get('product', [IndexController::class, 'page']);
+Route::get('product/{id}', [IndexController::class, 'page_detail']);
+Route::post('product-create', [IndexController::class, 'product_create']);
+Route::get('product-delete/{id}', [IndexController::class, 'product_delete']);
+Route::get('auth', [ApiController::class, 'auth_token']);
 
-Route::post('subscribe', [ApiController::class, 'subscribe'])->name('subscribe');
-Route::post('message', [ApiController::class, 'message'])->name('message');
+Route::post('subscribe', [ApiController::class, 'subscribe']);
+Route::post('message', [ApiController::class, 'message']);
+Route::get('products', [ApiController::class, 'products']);
+
+Route::get('addtocart', [ApiController::class, 'add_cart']);
 
 
 

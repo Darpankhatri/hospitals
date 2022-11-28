@@ -75,7 +75,45 @@ class IndexController extends Controller
     // api
     public function page()
     {
-        $product = product::where('is_active',1)->where('is_deleted',0)->first();
-        return response()->json(["product"=>$product]);
+        $product = product::where('is_active',1)->where('is_deleted',0)->get();
+        return response()->json($product);
+    }
+    public function page_detail($id)
+    {
+        $product = product::where('id',$id)->where('is_active',1)->where('is_deleted',0)->first();
+        return response()->json($product);
+    }
+
+    public function product_create(Request $req)
+    {
+
+        $product = new product;
+        if($req->id){
+            $product = product::where('id',$req->id)->where('is_active',1)->where('is_deleted',0)->first();
+        }
+        $product->name = $req->name;
+        $product->image = $req->image;
+        $product->price = $req->price;
+        $product->stock = $req->stock;
+        $product->description = $req->description;
+        $product->save();
+
+        if($req->id){
+
+            return response()->json(['message'=>"Updated Successfully",'status'=>1]);
+        }
+        return response()->json(['message'=>"Inserted Successfully",'status'=>1]);
+    }
+
+    public function product_delete($id)
+    {
+        $product = product::where('id',$id)->where('is_active',1)->where('is_deleted',0)->first();
+        if($product){
+            $product->is_active = 0;
+            $product->save();
+
+            return response()->json(['message'=>"Deleted Successfully",'status'=>1]);
+        }
+        return response()->json(['message'=>"Product Not Found!",'status'=>0]);
     }
 }
