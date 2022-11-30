@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2022 at 10:44 AM
+-- Generation Time: Nov 29, 2022 at 07:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -132,7 +132,13 @@ CREATE TABLE `message` (
 
 INSERT INTO `message` (`id`, `name`, `email`, `phone`, `is_active`, `is_deleted`, `created_at`, `updated_at`, `subject`, `message`) VALUES
 (1, 'Colby Buckner', 'xoqudur@mailinator.com', '+1 (315) 998-6646', 1, 0, '2022-11-18 14:08:37', '2022-11-18 14:08:37', 'Velit dicta quia qui', 'Voluptatibus lorem N'),
-(2, 'Conan Espinoza', 'xyguniso@mailinator.com', '+1 (777) 489-9831', 1, 0, '2022-11-19 05:37:43', '2022-11-19 05:37:43', 'Non corporis sit ma', 'Id in aliquam beatae');
+(2, 'Conan Espinoza', 'xyguniso@mailinator.com', '+1 (777) 489-9831', 1, 0, '2022-11-19 05:37:43', '2022-11-19 05:37:43', 'Non corporis sit ma', 'Id in aliquam beatae'),
+(3, 'Bevis Cotton', 'riluzykax@mailinator.com', '+1 (198) 634-7145', 1, 0, '2022-11-20 23:46:05', '2022-11-20 23:46:05', 'Dolorem excepturi ni', 'Qui et voluptatem s'),
+(4, 'Celeste Myers', 'fiwohyzo@mailinator.com', '+1 (857) 895-7347', 1, 0, '2022-11-21 04:04:45', '2022-11-21 04:04:45', 'Suscipit consectetur', 'Sit quia cillum lab'),
+(5, 'Celeste Myers', 'fiwohyzo@mailinator.com', '+1 (857) 895-7347', 1, 0, '2022-11-21 04:05:06', '2022-11-21 04:05:06', 'Suscipit consectetur', 'Sit quia cillum lab'),
+(6, 'Lane William', 'jyki@mailinator.com', '+1 (527) 733-8082', 1, 0, '2022-11-21 04:07:37', '2022-11-21 04:07:37', 'Molestias deserunt n', 'Nemo praesentium ess'),
+(7, 'Aquila Sargent', 'qirow@mailinator.com', '+1 (217) 833-6994', 1, 0, '2022-11-21 04:35:14', '2022-11-21 04:35:14', 'Quia in aut blanditi', 'Reprehenderit harum'),
+(8, 'Penelope Carpenter', 'vyfuwiba@mailinator.com', '+1 (933) 383-5676', 1, 0, '2022-11-22 01:06:14', '2022-11-22 01:06:14', 'Quam inventore aliqu', 'Voluptatem deleniti');
 
 -- --------------------------------------------------------
 
@@ -191,17 +197,20 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `image`, `price`, `stock`, `description`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
-(1, 'Angel ear droper', 'uploads/product/image_2022-10-23_105112996_1666504296.png', 65, 12, 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.', 1, 0, '2022-10-22 09:42:56', '2022-11-19 02:50:21'),
+(1, 'Angel ear droper', 'uploads/product/image_2022-10-23_105112996_1666504296.png', 65, 12, 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.', 0, 0, '2022-10-22 09:42:56', '2022-11-27 22:21:57'),
 (2, 'Long rectangel', 'uploads/product/image_2022-10-23_105217334_1666504355.png', 70, 22, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero blanditiis quo fugiat magni accusamus exercitationem! Voluptate, deleniti quae. Libero iusto minus, nulla excepturi quidem reprehenderit blanditiis eligendi exercitationem nesciunt ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi temporibus deserunt mollitia natus esse, sunt fuga quos. Autem quasi error quisquam architecto fuga suscipit atque voluptatibus nobis impedit nulla. Officia ercitationem. Lorem ipsum dolor, sit amet consectetur adipisicing elit.', 1, 0, '2022-10-22 09:42:56', '2022-11-19 02:50:44'),
-(3, 'Medical vial', 'uploads/product/image_2022-10-23_105408604_1666504450.png', 78, 90, ' Officia quaerat maxime laudantium obcaecati qui? Magni officiis fugit, dolorem mollitia eius similique accusantium nostrum possimus consectetur laudantium distinctio aliquid delectus assumenda? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime earum deleniti, quaerat rerum corporis quis iste veritatis', 1, 0, '2022-10-22 13:13:18', '2022-11-19 02:51:02'),
+(3, 'Medical vial', 'uploads/product/image_2022-10-23_105408604_1666504450.png', 78, 95, 'Officia quaerat maxime laudantium obcaecati qui? Magni officiis fugit, dolorem mollitia eius similique accusantium nostrum possimus consectetur laudantium distinctio aliquid delectus assumenda? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime earum deleniti, quaerat rerum corporis quis iste veritatis', 1, 0, '2022-10-22 13:13:18', '2022-11-27 22:25:55'),
 (4, 'Violet', 'uploads/product/image_2022-10-23_105504040_1666504506.png', 126, 30, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam, distinctio atque aperiam obcaecati ipsam id, inventore consectetur laudantium repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit.', 1, 0, '2022-10-22 14:22:59', '2022-11-19 02:48:33'),
-(5, 'Skin care cream', 'uploads/product/image_2022-10-23_105719302_1666504659.png', 50, 26, 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.', 1, 0, '2022-10-23 00:57:39', '2022-11-19 02:48:57'),
-(6, 'Hazi multi vitamin', 'uploads/product/product-7_1666679121.jpg', 56, 41, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero blanditiis quo fugiat magni accusamus exercitationem! Voluptate, deleniti quae. Libero iusto minus, nulla excepturi quidem reprehenderit blanditiis eligendi exercitationem nesciunt ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi temporibus deserunt mollitia natus esse, sunt fuga quos. ', 1, 0, '2022-10-25 01:25:21', '2022-11-19 02:49:29'),
+(5, 'Skin care cream', 'uploads/product/image_2022-10-23_105719302_1666504659.png', 50, 26, 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.', 0, 0, '2022-10-23 00:57:39', '2022-11-27 08:57:45'),
+(6, 'Hazi multi vitamin', 'uploads/product/product-7_1666679121.jpg', 56, 41, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero blanditiis quo fugiat magni accusamus exercitationem! Voluptate, deleniti quae. Libero iusto minus, nulla excepturi quidem reprehenderit blanditiis eligendi exercitationem nesciunt ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi temporibus deserunt mollitia natus esse, sunt fuga quos. ', 0, 0, '2022-10-25 01:25:21', '2022-11-27 22:20:12'),
 (7, 'Ampoule', 'uploads/product/product-8_1666679154.jpg', 40, 20, ' Officia quaerat maxime laudantium obcaecati qui? Magni officiis fugit, dolorem mollitia eius similique accusantium nostrum possimus consectetur laudantium distinctio aliquid delectus assumenda? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime earum deleniti, quaerat rerum corporis quis iste veritatis', 1, 0, '2022-10-25 01:25:54', '2022-11-19 02:51:29'),
 (8, 'Healthy vitamin', 'uploads/product/product-9_1666679194.jpg', 58, 31, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero blanditiis quo fugiat magni accusamus exercitationem! Voluptate, deleniti quae. Libero iusto minus, nulla excepturi quidem reprehenderit blanditiis eligendi exercitationem nesciunt ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi temporibus deserunt mollitia natus esse, sunt fuga quos. ', 1, 0, '2022-10-25 01:26:34', '2022-11-19 02:51:53'),
 (9, 'Special bacuum tube', 'uploads/product/product-10_1666679235.jpg', 43, 14, 'Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.', 1, 0, '2022-10-25 01:27:15', '2022-11-19 02:52:13'),
 (10, 'Deodo lequide', 'uploads/product/product-11_1666679276.jpg', 61, 13, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam, distinctio atque aperiam obcaecati ipsam id, inventore consectetur laudantium repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. ', 1, 0, '2022-10-25 01:27:56', '2022-11-19 02:53:03'),
-(11, 'MK nose droper', 'uploads/product/product-12_1666679342.jpg', 39, 30, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam, distinctio atque aperiam obcaecati ipsam id, inventore consectetur laudantium repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. ', 1, 0, '2022-10-25 01:29:02', '2022-11-19 02:52:46');
+(11, 'MK nose droper', 'uploads/product/product-12_1666679342.jpg', 39, 30, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam, distinctio atque aperiam obcaecati ipsam id, inventore consectetur laudantium repellat tempora aliquid exercitationem. Vel, dicta quos. Velit magnam, eius unde ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. ', 1, 0, '2022-10-25 01:29:02', '2022-11-19 02:52:46'),
+(12, 'new1', 'uploads/product/product-9_1666679194.jpg', 34, 12, 'dfasdf', 1, 0, '2022-11-27 06:34:54', '2022-11-27 08:57:22'),
+(13, '2nd', 'uploads/product/product-11_1666679276.jpg', 13, 24, 'fsdfsdf sdfsd fsdf sd f', 1, 0, '2022-11-27 06:35:47', '2022-11-27 06:35:47'),
+(14, 'sdf', 'asdf', 24, 34, 'asdfsadfsdf', 1, 0, '2022-11-27 08:56:41', '2022-11-27 08:56:41');
 
 -- --------------------------------------------------------
 
@@ -224,7 +233,12 @@ CREATE TABLE `subscribe` (
 
 INSERT INTO `subscribe` (`id`, `email`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
 (1, 'new@gmail.com', 1, 0, '2022-11-18 14:07:34', '2022-11-18 14:07:34'),
-(2, 'ziqejej@mailinator.com', 1, 0, '2022-11-18 14:08:16', '2022-11-18 14:09:56');
+(2, 'ziqejej@mailinator.com', 1, 0, '2022-11-18 14:08:16', '2022-11-18 14:09:56'),
+(3, 'om@gmail.com', 1, 0, '2022-11-20 23:04:01', '2022-11-20 23:04:01'),
+(4, 'vinay@gmail.com', 1, 0, '2022-11-20 23:36:14', '2022-11-20 23:36:14'),
+(5, 'om@gmial.com', 1, 0, '2022-11-21 02:14:16', '2022-11-27 10:24:00'),
+(6, 'darpan@gmail.com', 1, 0, '2022-11-21 02:18:53', '2022-11-21 02:18:53'),
+(7, 'rafay@gmail.com', 1, 0, '2022-11-21 23:57:45', '2022-11-21 23:57:45');
 
 -- --------------------------------------------------------
 
@@ -353,7 +367,7 @@ ALTER TABLE `logo`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -365,13 +379,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `subscribe`
 --
 ALTER TABLE `subscribe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
