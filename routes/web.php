@@ -27,10 +27,17 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [IndexController::class, 'index'])->name('web.index');
 Route::get('/about-us', [IndexController::class, 'about_us'])->name('aboutus');
+Route::get('/invoice-check', [IndexController::class, 'invoice_check'])->name('invoice');
 
 Route::get('/contact-us', [IndexController::class, 'contact_us'])->name('contactus');
 Route::post('send-message', [IndexController::class, 'send_message'])->name('send.message');
 Route::post('subscribe', [IndexController::class, 'subscribe'])->name('subscribe');
+
+Route::get('web-register',[IndexController::class,'web_register'])->name('web.register');
+Route::post('user-register',[IndexController::class,'user_register'])->name('user.register');
+
+Route::get('web-login',[IndexController::class,'web_login'])->name('web.login');
+Route::post('user-login',[IndexController::class,'user_login'])->name('user.login');
 
 Route::get('/products', [IndexController::class, 'product'])->name('product');
 Route::get('/product-detail/{id}', [IndexController::class, 'product_detail'])->name('product.detail');
@@ -39,10 +46,14 @@ Route::get('/product-detail/{id}', [IndexController::class, 'product_detail'])->
 
 Route::group(['middleware' => 'auth'], function()
 {
-    
     Route::get('checkout', [CartController::class, 'checkout'])->name('checkout');
+    Route::post('place-order', [CartController::class, 'place_order'])->name('place.order');
     
+    
+    Route::get('/user-logout', [CartController::class, 'user_logout'])->name('user.logout');
     Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+    Route::get('/del-cart/{id}', [CartController::class, 'del_cart'])->name('del.cart');
+    Route::post('/add-cart', [CartController::class, 'add_cart'])->name('add.cart');
 });
 
 

@@ -45,7 +45,7 @@
                                 <div class="product-img">
                                     <img src="{{ asset($data->image) }}" alt="Image">
                                     <div class="add-cart">
-                                        <a href="#" class="default-btn">Add to cart</a>
+                                        <a data-id="{{ $data->id }}" href="javascript:void();" class="default-btn add-to-cart">Add to cart</a>
                                     </div>
                                 </div>
 
@@ -135,4 +135,28 @@
 @endsection
 
 @section('js')
+    <script>
+        $(document).on("click", ".add-to-cart", function() {
+            var id = $(this).data("id");
+            var quantity = 1;
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                url: "{{ route('add.cart') }}",
+                data: {
+                    product_id: id,
+                    quantity: quantity,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    toastr.options = {
+                        "closeButton": true,
+                        "progressBar": true,
+                    }
+                    toastr.success(response.message);
+                    
+                }
+            });
+        });
+    </script>
 @endsection

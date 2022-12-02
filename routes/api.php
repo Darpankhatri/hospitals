@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,6 @@ Route::get('product', [IndexController::class, 'page']);
 Route::get('product/{id}', [IndexController::class, 'page_detail']);
 Route::post('product-create', [IndexController::class, 'product_create']);
 Route::get('product-delete/{id}', [IndexController::class, 'product_delete']);
-Route::get('auth', [ApiController::class, 'auth_token']);
 
 Route::post('subscribe', [ApiController::class, 'subscribe']);
 Route::post('message', [ApiController::class, 'message']);
@@ -35,7 +35,11 @@ Route::get('products', [ApiController::class, 'products']);
 Route::get('addtocart', [ApiController::class, 'add_cart']);
 
 
+Route::post('/login', [ApiController::class, 'login']);
+Route::post('/register', [ApiController::class, 'register']);
 
-Route::group(['middleware' => 'auth:api'], function () {
-    
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/me', [AuthController::class, 'me']);
+    Route::get('/logout',[AuthController::class,'logout']);
 });

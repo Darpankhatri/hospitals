@@ -57,13 +57,13 @@
                                         <i class="ri-subtract-line"></i>
                                     </span>
 
-                                    <input type="text" value="1" min="1" max="{{ $product->stock }}">
+                                    <input id="product-qnt" type="text" value="1" min="1" max="{{ $product->stock }}">
 
                                     <span class="plus-btn">
                                         <i class="ri-add-line"></i>
                                     </span>
                                 </div>
-                                <button type="submit" class="default-btn">
+                                <button data-id="{{ $product->id }}" class="default-btn add-to-cart">
                                     Add to cart
                                 </button>
                             </div>
@@ -155,4 +155,29 @@
 @endsection
 
 @section('js')
+    <script>
+        $(document).on("click", ".add-to-cart", function() {
+            var id = $(this).data("id");
+            console.log("here");
+            var quantity = $('#product-qnt').val();
+            $.ajax({
+                type: 'post',
+                dataType: 'json',
+                url: "{{ route('add.cart') }}",
+                data: {
+                    product_id: id,
+                    quantity: quantity,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    toastr.options = {
+                        "closeButton": true,
+                        "progressBar": true,
+                    }
+                    toastr.success(response.message);
+
+                }
+            });
+        });
+    </script>
 @endsection

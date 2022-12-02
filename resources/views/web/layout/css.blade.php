@@ -29,3 +29,5 @@
 <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('web/css/dark-mode.css') }}">
 <link rel="stylesheet" href="{{ asset('web/css/responsive.css') }}">
+
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">

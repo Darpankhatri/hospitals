@@ -47,19 +47,20 @@
 
             <div class="col-lg-4">
                 <ul class="header-right-content">
-                    <li>
-                        <i class="ri-user-3-line"></i>
-                        <a href="my-account.php">Login</a>
-                    </li>
-                    <!-- <li>
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>English</option>
-                            <option value="1">China</option>
-                            <option value="2">العربيّة</option>
-                            <option value="3">Germany</option>
-                            <option value="4">Portugues</option>
-                        </select>
-                    </li> -->
+                    @auth
+                        <li>
+                            <a href="{{ route('cart') }}"><i class="fa-solid fa-cart-shopping"></i></a>
+                        </li>
+                        <li>
+                            <a href="{{ route('user.logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                        </li>
+
+                    @else
+                        <li>
+                            <i class="ri-user-3-line"></i>
+                            <a href="{{ route('web.login') }}">Login</a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </div>

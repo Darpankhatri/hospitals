@@ -5,11 +5,74 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\message;
+use App\Models\User;
 use App\Models\subscribe;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
     //
+
+    public function invoice_check()
+    {
+        return view('web.pages.invoice');
+    }
+
+    public function web_register()
+    {
+        if(Auth::check()){
+            return redirect()->back();
+        }
+        return view('web.pages.register')->with('title','Register');
+    }
+
+    public function user_register(Request $req)
+    {
+        if(Auth::check()){
+            return redirect()->back();
+        }
+        $validate = Validator::make($req->all(),[
+            'name'=> 'required|min:3',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8',
+        ]);
+        if($validate->fails()){
+            return back()->withErrors($validate->errors())->withInput()->with('warning','Data Requirements not Match!');
+        }
+
+        $user = new User;
+        $user->name = $req->name;
+        $user->email = $req->email;
+        $user->password = Hash::make($req->password);
+
+        return view('web.pages.register')->with('title','Register');
+    }
+
+    public function web_login()
+    {
+        return view('web.pages.login')->with('title','Login');
+    }
+
+    public function user_login(Request $req)
+    {
+        $validate = Validator::make($req->all(),[
+            'email' => 'required|email|exists:users',
+            'password' => 'required|min:8',
+        ]);
+        if($validate->fails()){
+            return back()->withErrors($validate->errors())->withInput()->with('warning','Data Requirements not Match!');
+        }
+
+        $user = User::where('email',$req->email)->first();
+        if(Hash::check($req->password,$user->password)){
+            Auth::loginUsingId($user->id);
+            return redirect()->route('web.index')->with('message','Login Successfully');
+        }
+        return back()->with('error','InValid User Detail!');
+    }
+
 
     public function index()
     {
