@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            @if ($slug != 'message' && $slug != '' && $slug != 'subscribe')
+            @if ($slug != 'message' && $slug != '' && $slug != 'subscribe' && $slug != 'order')
                 <div class="row">
                     <div class="col-md-6 col-xl-3">
                         <div class="widget-rounded-circle card bg-dark shadow-none data-model-btn" style="cursor: pointer">

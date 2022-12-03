@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\product;
 use App\Models\message;
+use App\Models\order;
 use App\Models\subscribe;
 use Exception;
 use Illuminate\Support\Facades\Hash;
@@ -227,6 +228,54 @@ class GenericController extends Controller
                                     $body .= '><div class="toggle-switch"></div>
                                         </label>
                                     </td>
+                                    <td>'.date("M d,Y", strtotime($val->created_at)).'</td>
+                                </tr>';
+                        }
+                    }
+
+                    $body .='</tbody>
+                    <tfoot>
+                        <tr>
+                            <th>No#</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Creation date</th>
+                        </tr>
+                    </tfoot>
+                </table>';
+
+            $script = '';
+
+            $data['body'] = $body;
+            $data['script'] = $script;
+
+            return $data;
+        } else if($slug == 'order'){
+            $table = 'App\Models\\' . $slug;
+            $data = $table::where('is_deleted',0)->get();
+            $body .= '
+                <table id="basic-datatable" class="table table-striped dt-responsive nowrap w-100">
+                    <thead>
+                        <tr>
+                            <th>No#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Total</th>
+                            <th>Address</th>
+                            <th>Creation date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>';
+                    if(!$data->isEmpty()){
+                        foreach($data as $key => $val){
+                            
+                            $body .= '<tr>
+                                    <td>'.++$key.'</td>
+                                    <td>'.$val->name.'</td>
+                                    <td>'.$val->email.'</td>
+                                    <td>$'.$val->total.'</td>
+                                    <td>'.$val->address.'</td>
                                     <td>'.date("M d,Y", strtotime($val->created_at)).'</td>
                                 </tr>';
                         }

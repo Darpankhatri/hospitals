@@ -36,6 +36,12 @@
                             <span> Subscribe </span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('attribute','order') }}">
+                            <i class="fe-shopping-cart"></i>
+                            <span> Orders </span>
+                        </a>
+                    </li>
                 @endif
 
                 {{-- <li>

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 use App\Models\subscribe;
 use App\Models\message;
+use App\Models\order;
 use App\Models\product;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\orderitem;
 
 use Illuminate\Http\Request;
 
@@ -187,5 +189,11 @@ class ApiController extends Controller
 
         }
         return response()->json(['body' =>$body]);
+    }
+
+    public function get_orders()
+    {
+        $order = order::all();
+        return response()->json($order);
     }
 }

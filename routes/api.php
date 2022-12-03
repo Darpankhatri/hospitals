@@ -21,19 +21,23 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-
-Route::post('admin-login', [ApiController::class, 'admin_login']);
 Route::get('product', [IndexController::class, 'page']);
 Route::get('product/{id}', [IndexController::class, 'page_detail']);
 Route::post('product-create', [IndexController::class, 'product_create']);
 Route::get('product-delete/{id}', [IndexController::class, 'product_delete']);
+
+
+
+
+
+Route::post('admin-login', [ApiController::class, 'admin_login']);
 
 Route::post('subscribe', [ApiController::class, 'subscribe']);
 Route::post('message', [ApiController::class, 'message']);
 Route::get('get-message', [ApiController::class, 'get_message']);
 Route::get('get-subscribe', [ApiController::class, 'get_subscribe']);
 Route::get('products', [ApiController::class, 'products']);
+Route::get('get-orders', [ApiController::class, 'get_orders']);
 
 Route::get('addtocart', [ApiController::class, 'add_cart']);
 
