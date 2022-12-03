@@ -79,6 +79,9 @@ class CartController extends Controller
         $cart = cart::where('product_id',$id)->where('user_id',Auth::user()->id)->first();
         if($cart){
             $cart->delete();
+            if(Auth::user()->cart->count() == 0){
+                return redirect()->route('product')->with('error','Cart Is Empty!');
+            }
             return redirect()->back()->with('message','Deleted Successfully!');
         }
         

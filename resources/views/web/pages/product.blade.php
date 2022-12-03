@@ -119,7 +119,7 @@
 
                     <div class="d-flex justify-content-left">
                         {{-- {!! $product->links() !!} --}}
-                        {!! $product->links('pagination::bootstrap-4') !!}
+                        {{-- {!! $product->links('pagination::bootstrap-4') !!} --}}
                     </div>
                 </div>
             </div>

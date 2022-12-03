@@ -16,6 +16,13 @@ use Illuminate\Http\Request;
 class ApiController extends Controller
 {
     //
+    public function Check_api()
+    {
+        $user = User::all();
+        return response()->json($user);
+    }
+
+
     public function register(Request $request)
     {
         $validatedData = $request->validate([
@@ -76,37 +83,71 @@ class ApiController extends Controller
         }
         return response()->json(['message'=>"Account Not Found",'status'=>0]);
     }
-    
-    public function add_cart(Request $req)
+
+
+
+    public function product()
     {
-       
-        return response()->json(['status'=> 1,'message'=>"Cart added"]);
+        $product = product::where('is_active',1)->where('is_deleted',0)->get();
+        return response()->json($product);
+    }
+    public function product_detail($id)
+    {
+        $product = product::where('id',$id)->where('is_active',1)->where('is_deleted',0)->first();
+        return response()->json($product);
     }
 
-    public function update_cart(Request $req)
+    public function product_create(Request $req)
     {
-        return response()->json(['success'=>'Updated']);
+
+        $product = new product;
+        if($req->id){
+            $product = product::where('id',$req->id)->where('is_active',1)->where('is_deleted',0)->first();
+        }
+        $product->name = $req->name;
+        $product->image = $req->image;
+        $product->price = $req->price;
+        $product->stock = $req->stock;
+        $product->description = $req->description;
+        $product->save();
+
+        if($req->id){
+
+            return response()->json(['message'=>"Updated Successfully",'status'=>1]);
+        }
+        return response()->json(['message'=>"Inserted Successfully",'status'=>1]);
     }
 
-    public function delete_cart(Request $req)
+    public function product_delete($id)
     {
-        
-        return response()->json(['success'=>'Deleted']);
-        
+        $product = product::where('id',$id)->where('is_active',1)->where('is_deleted',0)->first();
+        if($product){
+            $product->is_active = 0;
+            $product->save();
+
+            return response()->json(['message'=>"Deleted Successfully",'status'=>1]);
+        }
+        return response()->json(['message'=>"Product Not Found!",'status'=>0]);
     }
+
+
+
 
     public function subscribe(Request $req)
     {
-        $data = subscribe::where('email',$req->email)->first();
-        
-        if(!$data){
-            $sub = new subscribe;
-            $sub->email = $req->email;
-            $sub->save();
-
-            return response()->json(['status'=>'1','message'=>"Added Successfully"]);
+        $validate = Validator::make($req->all(),[
+            'email' => 'required|string|email|max:255|unique:subscribe',
+        ]);
+        if($validate->fails()){
+            return response()->json(['status'=>'0','message'=>$validate->errors()]);
         }
-        return response()->json(['status'=>'0','message'=>"Already added"]);
+
+        $sub = new subscribe;
+        $sub->email = $req->email;
+        $sub->save();
+
+        return response()->json(['status'=>'1','message'=>"Added Successfully"]);
+        
     }
 
     public function message(Request $req)
