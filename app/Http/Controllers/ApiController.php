@@ -7,6 +7,7 @@ use App\Models\product;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 
@@ -53,6 +54,26 @@ class ApiController extends Controller
         ]);
     }
 
+    public function admin_login(Request $req)
+    {
+        $validate = Validator::make($req->all(),[
+            'email' => 'required|email|exists:users',
+            'password' => 'required|min:8',
+        ]);
+        if($validate->fails()){
+            return response()->json(['message'=>"Account Not Found",'status'=>0]);
+        }
+
+        $user = User::where('email',$req->email)->where('role_id',1)->first();
+        if($user)
+        {
+            if(Hash::check($req->password,$user->password)){
+                return response()->json(['message'=>"Login Successfully",'status'=>1]);
+            }
+            return response()->json(['message'=>"Password Not Match",'status'=>0]);
+        }
+        return response()->json(['message'=>"Account Not Found",'status'=>0]);
+    }
     
     public function add_cart(Request $req)
     {
@@ -103,6 +124,20 @@ class ApiController extends Controller
 
         return response()->json(['status'=>'1','message'=>"Message Send Successfully"]);
         return back()->with('message','Message Send Successfully');
+    }
+
+    public function get_message()
+    {
+        $message = message::where('is_active',1)->where('is_deleted',0)->get();
+        return response()->json($message);
+
+    }
+
+    public function get_subscribe()
+    {
+        $get_subscribe = subscribe::where('is_active',1)->where('is_deleted',0)->get();
+        return response()->json($get_subscribe);
+
     }
 
 

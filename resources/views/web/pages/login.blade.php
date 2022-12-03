@@ -10,7 +10,7 @@
                     <h2>My Account</h2>
                     <ul>
                         <li>
-                            <a href="index.php">
+                            <a href="{{ route('web.index') }}">
                                 <i class="ri-home-8-line"></i>
                                 Home
                             </a>

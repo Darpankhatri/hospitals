@@ -235,7 +235,7 @@
 
                             <div class="department-content one">
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Dental
                                     </a>
                                 </h3>
@@ -248,13 +248,13 @@
                                     <i class="flaticon-fracture"></i>
                                 </div>
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Dental
                                     </a>
                                 </h3>
                                 <p>Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada
                                     feugiat. Sed porttitor lectus nibh.</p>
-                                <a href="department-orthopedics.php" class="read-more">
+                                <a href="javascript:void();" class="read-more">
                                     Read More
                                     <i class="ri-arrow-right-line"></i>
                                 </a>
@@ -268,7 +268,7 @@
 
                             <div class="department-content one">
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Orthopedics
                                     </a>
                                 </h3>
@@ -281,13 +281,13 @@
                                     <i class="flaticon-fracture"></i>
                                 </div>
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Orthopedics
                                     </a>
                                 </h3>
                                 <p>Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada
                                     feugiat. Sed porttitor lectus nibh.</p>
-                                <a href="department-orthopedics.php" class="read-more">
+                                <a href="javascript:void();" class="read-more">
                                     Read More
                                     <i class="ri-arrow-right-line"></i>
                                 </a>
@@ -301,7 +301,7 @@
 
                             <div class="department-content one">
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Neurosciences
                                     </a>
                                 </h3>
@@ -314,13 +314,13 @@
                                     <i class="flaticon-fracture"></i>
                                 </div>
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Neurosciences
                                     </a>
                                 </h3>
                                 <p>Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada
                                     feugiat. Sed porttitor lectus nibh.</p>
-                                <a href="department-orthopedics.php" class="read-more">
+                                <a href="javascript:void();" class="read-more">
                                     Read More
                                     <i class="ri-arrow-right-line"></i>
                                 </a>
@@ -334,7 +334,7 @@
 
                             <div class="department-content one">
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Cancer care
                                     </a>
                                 </h3>
@@ -347,13 +347,13 @@
                                     <i class="flaticon-fracture"></i>
                                 </div>
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Cancer care
                                     </a>
                                 </h3>
                                 <p>Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada
                                     feugiat. Sed porttitor lectus nibh.</p>
-                                <a href="department-orthopedics.php" class="read-more">
+                                <a href="javascript:void();" class="read-more">
                                     Read More
                                     <i class="ri-arrow-right-line"></i>
                                 </a>
@@ -367,7 +367,7 @@
 
                             <div class="department-content one">
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Gastroenterology
                                     </a>
                                 </h3>
@@ -380,13 +380,13 @@
                                     <i class="flaticon-fracture"></i>
                                 </div>
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Gastroenterology
                                     </a>
                                 </h3>
                                 <p>Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada
                                     feugiat. Sed porttitor lectus nibh.</p>
-                                <a href="department-orthopedics.php" class="read-more">
+                                <a href="javascript:void();" class="read-more">
                                     Read More
                                     <i class="ri-arrow-right-line"></i>
                                 </a>
@@ -400,7 +400,7 @@
 
                             <div class="department-content one">
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Medicine
                                     </a>
                                 </h3>
@@ -413,13 +413,13 @@
                                     <i class="flaticon-fracture"></i>
                                 </div>
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Medicine
                                     </a>
                                 </h3>
                                 <p>Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada
                                     feugiat. Sed porttitor lectus nibh.</p>
-                                <a href="department-orthopedics.php" class="read-more">
+                                <a href="javascript:void();" class="read-more">
                                     Read More
                                     <i class="ri-arrow-right-line"></i>
                                 </a>
@@ -433,7 +433,7 @@
 
                             <div class="department-content one">
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Cardiology
                                     </a>
                                 </h3>
@@ -446,13 +446,13 @@
                                     <i class="flaticon-fracture"></i>
                                 </div>
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Cardiology
                                     </a>
                                 </h3>
                                 <p>Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada
                                     feugiat. Sed porttitor lectus nibh.</p>
-                                <a href="department-orthopedics.php" class="read-more">
+                                <a href="javascript:void();" class="read-more">
                                     Read More
                                     <i class="ri-arrow-right-line"></i>
                                 </a>
@@ -466,7 +466,7 @@
 
                             <div class="department-content one">
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Surgery
                                     </a>
                                 </h3>
@@ -479,13 +479,13 @@
                                     <i class="flaticon-fracture"></i>
                                 </div>
                                 <h3>
-                                    <a href="department-orthopedics.php">
+                                    <a href="javascript:void();">
                                         Surgery
                                     </a>
                                 </h3>
                                 <p>Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada
                                     feugiat. Sed porttitor lectus nibh.</p>
-                                <a href="department-orthopedics.php" class="read-more">
+                                <a href="javascript:void();" class="read-more">
                                     Read More
                                     <i class="ri-arrow-right-line"></i>
                                 </a>

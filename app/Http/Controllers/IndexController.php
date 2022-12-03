@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\message;
+use App\Models\order;
 use App\Models\User;
 use App\Models\subscribe;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Models\orderitem;
+use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
 {
@@ -17,7 +20,14 @@ class IndexController extends Controller
 
     public function invoice_check()
     {
-        return view('web.pages.invoice');
+        $order = order::first();
+        $order_item = $order->items;
+        Mail::send('web.pages.invoice',['order'=>$order,'order_item'=>$order_item],function($message) use($order){
+            $message->to($order->email);
+            $message->subject("Order Placed Successfully");
+        });
+        return redirect()->route('web.index');
+        // return view('web.pages.invoice',compact('order','order_item'));
     }
 
     public function web_register()
@@ -46,8 +56,8 @@ class IndexController extends Controller
         $user->name = $req->name;
         $user->email = $req->email;
         $user->password = Hash::make($req->password);
-
-        return view('web.pages.register')->with('title','Register');
+        $user->save();
+        return redirect()->route('web.login')->with('message','Account Created Successfully');
     }
 
     public function web_login()

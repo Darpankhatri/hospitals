@@ -52,12 +52,12 @@
 
     .invoice-sec-wrap .invoice-card .invoice-info .invoice-info-content ul {
         display: flex;
-        margin: 10px 0;
+        margin: 0;
         align-items: center;
     }
 
     .invoice-sec-wrap .invoice-card .invoice-info .invoice-info-content ul li.first {
-        width: 170px;
+        width: 120px;
         font-size: 17px;
         font-weight: 600;
         color: #786d6d;
@@ -84,6 +84,12 @@
         font-size: 24px;
         font-weight: 700;
         color: #1370b5;
+        padding: 0;
+        margin: 0;
+    }
+
+    .invoice-sec-wrap .invoice-card .invoice-table table.table{
+        width: 100% !important;
     }
 
     .invoice-sec-wrap .invoice-card .invoice-table table.table tbody tr th {
@@ -105,6 +111,9 @@
         object-fit: contain;
     }
 
+    .invoice-sec-wrap .invoice-card .card-bottom{
+        margin: 30px 0 0 0;
+    }
 
     .invoice-sec-wrap .invoice-card .card-bottom ul {
         display: flex;

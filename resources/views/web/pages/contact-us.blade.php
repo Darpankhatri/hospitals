@@ -25,58 +25,6 @@
         <!-- End Page Banner Area -->
 
 
-        <!-- Start Contact Informetion Area -->
-        {{-- <div class="contact-informetion-area ptb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="left-informetion">
-                            <h2>Contact Information</h2>
-                            <ul>
-                                <li>
-                                    <span>ADDRESS:</span>
-                                    1224 Woodmont LN. MK #2255, Atlanta, GA, 20304
-                                </li>
-                                <li>
-                                    <span>EMAIL US:</span>
-                                    <a
-                                        href="https://templates.envytheme.com/cdn-cgi/l/email-protection#0e676068614e6c6b7667206d6163"><span
-                                            class="__cf_email__"
-                                            data-cfemail="9cf5f2faf3dcfef9e4f5b2fff3f1">[email&#160;protected]</span></a>
-                                </li>
-                                <li>
-                                    <span>PHONE:</span>
-                                    <a href="tell:1-885-665-2022">1-885-665-2022</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <div class="right-informetion">
-                            <h2>Opening Hours</h2>
-
-                            <ul>
-                                <li>
-                                    Saturday– Thursday
-                                    <span>8.00 AM – 8.00 PM</span>
-                                </li>
-                                <li>
-                                    Saturday– Thursday
-                                    <span>10.00 AM – 10.00 PM</span>
-                                </li>
-                                <li>
-                                    Sunday
-                                    <span>8.00 PM – 03.00 PM</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <!-- End Contact Informetion Area -->
-
         <!-- Start Contact Area -->
         <div class="contact-area pb-100">
             <div class="container">

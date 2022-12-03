@@ -152,6 +152,8 @@
                     toastr.options = {
                         "closeButton": true,
                         "progressBar": true,
+                        "debug": false,
+                        "positionClass": "toast-bottom-right",
                     }
                     toastr.success(response.message);
                     

@@ -62,7 +62,7 @@ class CartController extends Controller
         {
             $cart->quantity = $req->quantity;
             $cart->save();
-            return response()->json(['message','Cart Updated Successfully']);
+            return response()->json(['message'=>'Cart Updated Successfully']);
         }
         else{
             $cart = new cart;
@@ -70,7 +70,7 @@ class CartController extends Controller
             $cart->product_id = $req->product_id;
             $cart->quantity = $req->quantity;
             $cart->save();
-            return response()->json(['message','Add in cart']);
+            return response()->json(['message'=>'Add in cart']);
         }
     }
 
