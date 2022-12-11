@@ -157,6 +157,12 @@
                     }
                     toastr.success(response.message);
                     
+                },
+                error: function (textStatus, errorThrown)
+                {
+                    // toastr.error('error');
+                    var uarl = "{{ route('web.login') }}";
+                    location.replace(uarl);
                 }
             });
         });
